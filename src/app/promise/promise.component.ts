@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./promise.component.scss'],
 })
 export class PromiseComponent implements OnInit {
-  constructor() {}
+  constructor() { }
+
+
   dellAvailable() {
     return true;
   }
@@ -14,30 +16,64 @@ export class PromiseComponent implements OnInit {
     return false;
   }
 
+
+
+
+
+  // make some object for sending dynamic data in the promise: 
+  dell = {
+    brand: "Dell",
+    hardDisk: "2 TB",
+    color: "Black"
+  }
+  hp = {
+    brand: "HP",
+    hardDisk: "1 TB",
+    color: "red"
+  }
+  notAvailable = {
+    brand: "Not Available",
+    status: "failed"
+  }
+
+  // make a promiseVal
+
+  promiseVal: string = "";
+
   ngOnInit(): void {
     // make a promise like
-    const byeLaptop = new Promise((resolve, reject) => {
+    const buyLaptop = new Promise((resolve, reject) => {
       // 1st case : General case
-       resolve("promise is resolved")
-       reject('promise is rejected ');
+      /* resolve("promise is resolved")
+       reject('promise is rejected ');*/
 
       // 2nd case: if else
-     /* if (this.dellAvailable()) {
-         setTimeout(() => {
-          resolve('Dell is Purchased');
-        }, 5000);
+      if (this.dellAvailable()) {
+        setTimeout(() => {
+          // resolve('Dell is Purchased');
+          resolve(this.dell);
+
+        }, 2000);
       } else if (this.hpAvailable()) {
         setTimeout(() => {
-          resolve('HP is Purchased ');
-        }, 5000);
+          // resolve('HP is Purchased ');
+          resolve(this.hp)
+        }, 2000);
       } else {
-        reject('sorry no product is available ');
-      }*/
+        // reject('sorry no product is available ');
+        reject(this.notAvailable);
+      }
     });
-    byeLaptop
-      .then((res) => console.log(`the result is : ${res}`))
+    buyLaptop
+      .then(res => {
+        console.log(`the result is : ${JSON.stringify(res)}`)
+        this.promiseVal = res as string;
+      },
+      )
       .catch((res) => {
-        console.log(`the result is : ${res}`);
-      });
+        console.log(`the result is : ${JSON.stringify(res) }`);
+        this.promiseVal = res as string;
+      });  
   }
 }
+ 
