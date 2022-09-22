@@ -17,12 +17,12 @@ export class PromiseComponent implements OnInit {
   ngOnInit(): void {
     // make a promise like
     const byeLaptop = new Promise((resolve, reject) => {
-      /* 1st case : General case
+      // 1st case : General case
        resolve("promise is resolved")
-       reject('promise is rejected ');*/
+       reject('promise is rejected ');
 
       // 2nd case: if else
-      if (this.dellAvailable()) {
+     /* if (this.dellAvailable()) {
          setTimeout(() => {
           resolve('Dell is Purchased');
         }, 5000);
@@ -32,7 +32,7 @@ export class PromiseComponent implements OnInit {
         }, 5000);
       } else {
         reject('sorry no product is available ');
-      }
+      }*/
     });
     byeLaptop
       .then((res) => console.log(`the result is : ${res}`))
