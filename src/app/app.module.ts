@@ -9,6 +9,7 @@ import { PromiseComponent } from './promise/promise.component';
 import { ObservableComponent } from './observable/observable.component';
 import { AllComponent } from './observable/all/all.component';
 import { FormEventComponent } from './observable/form-event/form-event.component';
+import { IntervelComponent } from './observable/intervel/intervel.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FormEventComponent } from './observable/form-event/form-event.component
     ObservableComponent,
     AllComponent,
     FormEventComponent,
+    IntervelComponent,
   ],
   imports: [
     BrowserModule,

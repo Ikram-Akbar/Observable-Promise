@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AllComponent } from './observable/all/all.component';
 import { FormEventComponent } from './observable/form-event/form-event.component';
+import { IntervelComponent } from './observable/intervel/intervel.component';
 import { ObservableComponent } from './observable/observable.component';
 import { PromiseComponent } from './promise/promise.component';
 
@@ -13,6 +14,7 @@ const routes: Routes = [
     path: 'observable', component: ObservableComponent, children: [
       { path: '', component: AllComponent },
       { path: 'form-event', component: FormEventComponent },
+      {path:'interval', component:IntervelComponent}
    
   ]},
 
