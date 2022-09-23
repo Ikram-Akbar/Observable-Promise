@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RxjsComponent } from './rxjs.component';
+import { AllComponent } from './all.component';
 
-describe('RxjsComponent', () => {
-  let component: RxjsComponent;
-  let fixture: ComponentFixture<RxjsComponent>;
+describe('AllComponent', () => {
+  let component: AllComponent;
+  let fixture: ComponentFixture<AllComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RxjsComponent ]
+      declarations: [ AllComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RxjsComponent);
+    fixture = TestBed.createComponent(AllComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
